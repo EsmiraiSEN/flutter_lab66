@@ -1,17 +1,57 @@
-# my_app_isenbekova
+# Генератор советов (Лабораторная работа №6)
 
-A new Flutter project.
+Приложение, которое выдает случайный полезный совет при нажатии на кнопку. 
 
-## Getting Started
+## Автор
+## Автор
+- *Фамилия:* Исенбекова
+- *Имя:* Эсмира
+- *Группа:* ИСП-241
+- *Дата сдачи:* 06.11.2026
 
-This project is a starting point for a Flutter application.
+## Стек и версии
+- **Flutter:** 3.47.8
+- **Dart:** 3.9.0
+- **Платформа:** Web (Chrome)
+- **IDE:** VS Code
 
-A few resources to get you started if this is your first Flutter project:
+## Скриншот приложения
+![Скриншот](img\step6_Isenbekova.png)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Структура проекта
+- `lib/main.dart` — точка входа, настройка MaterialApp.
+- `lib/gradient_container.dart` — фон с градиентом.
+- `lib/advice_roller.dart` — StatefulWidget, хранит логику случайного выбора.
+- `lib/advice_text.dart` — StatelessWidget, отображает текст совета.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Как запустить
+```bash
+git clone <ссылка на репозиторий>
+cd advice_generator_fio
+flutter pub get
+flutter run -d chrome
+```
+
+**Что изучили**
+1. Создание градиентного фона с помощью LinearGradient.
+
+2. Разделение кода на отдельные файлы для удобства.
+
+3. Использование StatefulWidget для обновления интерфейса через setState.
+
+4. Работа с Random для случайного выбора текста и картинки.
+
+5. Передача данных в виджет через параметры конструктора.
+
+**Ответы на вопросы**
+1. Зачем выносить виджеты в отдельные файлы?
+Для чистоты кода и удобства. Если всё держать в main.dart, файл станет огромным, в нём будет сложно искать нужные элементы.
+
+2. Что такое BuildContext?
+Это объект, который содержит информацию о расположении виджета в дереве и позволяет обращаться к родительским настройкам (например, к теме).
+
+3. Чем StatelessWidget отличается от StatefulWidget?
+Stateless не меняется после отрисовки. Stateful хранит состояние и может перерисовываться при вызове setState(). Для кнопки и случайного текста нужен Stateful.
+
+4. Почему Random() создаётся на уровне файла?
+Чтобы не пересоздавать генератор случайных чисел при каждом нажатии кнопки. Так он работает эффективнее.
