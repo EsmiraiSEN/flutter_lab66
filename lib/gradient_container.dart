@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'advice_roller.dart'; 
 
 const startAlignment = Alignment.topLeft;
 const endAlignment = Alignment.bottomRight;
@@ -20,10 +21,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: const Center(
-        child: Text(
-          "Генератор советов ",
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
+        child: AdviceRoller(),
       ),
     );
   }
